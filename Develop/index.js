@@ -71,54 +71,12 @@ const questions = [
   },
 
 ]
-    .then((data)=>{
-    const markdown = 
     
-    `# ${data.title}
-
-    ## Description
-    ${data.description}
-
-    ## Table of Contents 
-    - [Installation](#installation)
-    - [usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#Tests)
-    - [Questions](#questions)
-
-    ## Installation Instructions
-    ${data.name}
-
-    ## Usage
-    ${data.usage}
-
-    ## License
-    ${data.license}
-
-    ## Contributing
-    Contributions are welcome. Please submit a pull request.
-
-    ## Tests
-    
-    \`\`\`
-    npm test
-    \`\`\`
-
-    ## Questions
-    If you have any questions, please contact me using the following information:
-
-    GitHub username: ${data.username}
-
-    Email address: ${data.email}`
-
-
-
 // TODO: Create a function to write README file
 fs.writeFile("README.md", markdown, (err) =>
 err ? console.error(err) : console.log("README was created!")
 );   
-})
+
 
 
 // TODO: Create a function to initialize app
