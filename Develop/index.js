@@ -9,6 +9,14 @@ inquirer
             type: "input",
             name: "title",
             message: "What is the name of your project?",
+            validate:  titleInput => {
+                if(titleInput) {
+                    return true
+                } else {
+                    console.log("please enter a title for your project")
+                    return false
+                }
+            }
         },
         {
             type: "input",
