@@ -81,7 +81,7 @@ inquirer
     - [Questions](#questions)
 
     ## Installation Instructions
-    ${data[2].name}
+    ${data.name}
 
     ## Usage
     ${data.usage}
@@ -104,13 +104,6 @@ inquirer
     GitHub username: ${data.username}
 
     Email address: ${data.email}`
-
-
-
-
-
-
-
 
 
 
