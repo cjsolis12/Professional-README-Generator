@@ -23,17 +23,41 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch(license){
+    case 'MIT License':
+      return 'https://opensource.org/licenses/MIT';
+    case 'Apache 2.0':
+      return 'https://opensource.org/licenses/Apache-2.0';
+    case 'Mozilla Public license 2.0':
+      return 'https://www.mozilla.org/en-US/MPL/2.0/'
+    case 'GNU AGPLv3':
+      return 'https://www.gnu.org/licenses/agpl-3.0';
+    case "GNU GPLv3":
+      return "https://www.gnu.org/licenses/gpl-3.0";
+    case "Boost Software License 1.0":
+      return "https://www.boost.org/LICENSE_1_0.txt";
+    case "the Unilicense":
+      return "http://unlicense.org/";
+    // Add cases for other licenses as needed
+    default:
+      return '';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  
+}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(questions) {
+  return `
+  # ${questions.name}
+
   ## Description
-  ${data.description}
+  ${questions.description}
 
   ## Table of Contents 
   - [Installation](#installation)
@@ -44,13 +68,13 @@ function generateMarkdown(data) {
   - [Questions](#questions)
 
   ## Installation Instructions
-  ${data.name}
+  ${questions.name}
 
   ## Usage
-  ${data.usage}
+  ${questions.usage}
 
   ## License
-  ${data.license}
+  
 
   ## Contributing
   Contributions are welcome. Please submit a pull request.
@@ -64,10 +88,10 @@ function generateMarkdown(data) {
   ## Questions
   If you have any questions, please contact me using the following information:
 
-  GitHub username: ${data.username}
+  GitHub username: ${questions.username}
 
-  Email address: ${data.email}
+  Email address: ${questions.email}
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown();
