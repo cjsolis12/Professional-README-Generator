@@ -3,8 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // TODO: Create an array of questions for user input
-inquirer
-    .prompt([
+const questions = [
         {
             type: "input",
             name: "title",
@@ -39,14 +38,14 @@ inquirer
         },
         {
             type: "list",
-            name: "License",
+            name: "license",
             message: "Please pick your license?",
             choices: [
                 "MIT License",
                 "Mozilla Public license 2.0",
                 "GNU AGPLv3",
                 "GNU GPLv3",
-                "Apache License 2.0",
+                "Apache 2.0",
                 "Boost Software License 1.0",
                 "the Unilicense",
                 ],
@@ -71,7 +70,7 @@ inquirer
     }
   },
 
-])
+]
     .then((data)=>{
     const markdown = 
     
@@ -123,7 +122,14 @@ err ? console.error(err) : console.log("README was created!")
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+        .then(function(answer){
+            console.log(answer);
+        let fileContent = generateMarkdown(answer)
+
+        })
+}
 
 // Function call to initialize app
 init();
