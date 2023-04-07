@@ -23,7 +23,7 @@ This command line tool uses the NPM package ‘Inquirer 8.24’ to prompt the us
    - Answer the questions to generate a markdown file
   
   
-   ![screenshot](./assets/readmeScreenshot.png)
+   ![screenshot](Develop/assets/readmeScreenshot.png)
   
 
  
