@@ -48,50 +48,64 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-
+  if(license){
+    renderLicenseBadge(license);
+    const licenseLink = renderLicenseLink(license);
+    return `
+    This project is covered under the ${license}.
+    ${licenseLink}
+    `
+  }else{
+    return ""
+  }
 }
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = ({title, description, installation, usage, license, github, email} ) => 
- `
-  # ${title}
+const generateMarkdown = ({title, description, installation, usage, license, github, email} ) => {
+  const licenseSection = renderLicenseSection(license);
+  const licenseBadge = renderLicenseBadge(license)
+  //const licenseLink = renderLicenseLink(license)
+ return`
+   # ${title}\n${licenseBadge}
+ 
+   ## Description
+   ${description}
+ 
+   ## Table of Contents 
+   - [Installation](#installation)
+   - [usage](#usage)
+   - ${renderLicenseSection(license)}
+   - [Contributing](#contributing)
+   - [Tests](#Tests)
+   - [Questions](#questions)
+ 
+   ## Installation Instructions
+   ${installation}
+ 
+   ## Usage
+   ${usage}
+ 
+ 
+   ${license ? `## License\n${licenseSection}\n` : ''}
+ 
+   ## Contributing
+   Contributions are welcome. Please submit a pull request.
+   ${github}
+ 
+   ## Tests
+   
+   \`\`\`
+   npm test
+   \`\`\`
+ 
+   ## Questions
+   If you have any questions, please contact me using the following information:
+ 
+   GitHub username: ${github}
+ 
+   Email address: ${email}
+ `;
+}
 
-  ## Description
-  ${description}
-
-  ## Table of Contents 
-  - [Installation](#installation)
-  - [usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#Tests)
-  - [Questions](#questions)
-
-  ## Installation Instructions
-  ${installation}
-
-  ## Usage
-  ${usage}
-
-  ## License
-  ${license}
-
-  ## Contributing
-  Contributions are welcome. Please submit a pull request.
-  ${github}
-
-  ## Tests
-  
-  \`\`\`
-  npm test
-  \`\`\`
-
-  ## Questions
-  If you have any questions, please contact me using the following information:
-
-  GitHub username: ${github}
-
-  Email address: ${email}
-`;
 
 module.exports = generateMarkdown;

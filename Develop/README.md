@@ -1,39 +1,49 @@
 
-  # Readme
+   # README
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+ 
+   ## Description
+   description
+ 
+   ## Table of Contents 
+   - [Installation](#installation)
+   - [usage](#usage)
+   - 
+    This project is covered under the MIT License.
+    https://opensource.org/licenses/MIT
+    
+   - [Contributing](#contributing)
+   - [Tests](#Tests)
+   - [Questions](#questions)
+ 
+   ## Installation Instructions
+   
+ 
+   ## Usage
+   
+ 
+ 
+   ## License
 
-  ## Description
-  decription
+    This project is covered under the MIT License.
+    https://opensource.org/licenses/MIT
+    
 
-  ## Table of Contents 
-  - [Installation](#installation)
-  - [usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#Tests)
-  - [Questions](#questions)
-
-  ## Installation Instructions
-  steps
-
-  ## Usage
-  
-
-  ## License
-  MIT License
-
-  ## Contributing
-  Contributions are welcome. Please submit a pull request.
-  cjsolis
-
-  ## Tests
-  
-  ```
-  npm test
-  ```
-
-  ## Questions
-  If you have any questions, please contact me using the following information:
-
-  GitHub username: cjsolis
-
-  Email address: email@gmail.com
+ 
+   ## Contributing
+   Contributions are welcome. Please submit a pull request.
+   
+ 
+   ## Tests
+   
+   ```
+   npm test
+   ```
+ 
+   ## Questions
+   If you have any questions, please contact me using the following information:
+ 
+   GitHub username: 
+ 
+   Email address: email@email.com
+ 
