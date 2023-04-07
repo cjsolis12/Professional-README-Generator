@@ -1,7 +1,7 @@
 // A function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  switch(license){
+  switch (license) {
     case "MIT License":
       return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
     case "Apache 2.0":
@@ -24,15 +24,15 @@ function renderLicenseBadge(license) {
 // A function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  switch(license){
-    case 'MIT License':
-      return 'https://opensource.org/licenses/MIT';
-    case 'Apache 2.0':
-      return 'https://opensource.org/licenses/Apache-2.0';
-    case 'Mozilla Public license 2.0':
-      return 'https://www.mozilla.org/en-US/MPL/2.0/'
-    case 'GNU AGPLv3':
-      return 'https://www.gnu.org/licenses/agpl-3.0';
+  switch (license) {
+    case "MIT License":
+      return "https://opensource.org/licenses/MIT";
+    case "Apache 2.0":
+      return "https://opensource.org/licenses/Apache-2.0";
+    case "Mozilla Public license 2.0":
+      return "https://www.mozilla.org/en-US/MPL/2.0/";
+    case "GNU AGPLv3":
+      return "https://www.gnu.org/licenses/agpl-3.0";
     case "GNU GPLv3":
       return "https://www.gnu.org/licenses/gpl-3.0";
     case "Boost Software License 1.0":
@@ -41,33 +41,31 @@ function renderLicenseLink(license) {
       return "http://unlicense.org/";
     // Add cases for other licenses as needed
     default:
-      return '';
+      return "";
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(license){
-    renderLicenseBadge(license);
+  if (license) {
     const licenseLink = renderLicenseLink(license);
-    return `
-    This project is covered under the ${license}.
-    ${licenseLink}
-    `
-  }else{
-    return ""
+    return `This project is covered under the ${license} license.
+     For more information, see [${licenseLink}](${licenseLink}).`
+    ;
+  } else {
+    return "";
   }
 }
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = ({title, description, installation, usage, contribution, license, testCommand, github, email} ) => {
+const generateMarkdown = ({title, description, installation, usage, contribution, license, testCommand, github, email,}) => {
   const licenseSection = renderLicenseSection(license);
-  const licenseBadge = renderLicenseBadge(license)
-  //const licenseLink = renderLicenseLink(license)
- return`
+  const licenseBadge = renderLicenseBadge(license);
+  return `
    # ${title}\n${licenseBadge}
  
+
    ## Description
    ${description}
  
@@ -76,22 +74,28 @@ const generateMarkdown = ({title, description, installation, usage, contribution
    - [usage](#usage)
    - [License](#license)
    - [Contributing](#contributing)
-   - [Tests](#Tests)
+   - [Tests](#tests)
    - [Questions](#questions)
  
+
    ## Installation Instructions
-   ${installation}
+   - ${installation}
  
+
    ## Usage
-   ${usage}
+   - ${usage}
  
+
+   ${license ? `## License\n${licenseSection}\n` : ""}
  
-   ${license ? `## License\n${licenseSection}\n` : ''}
- 
+
    ## Contributing
-   Contributions are welcome. ${contribution ? `Guidelines for contributing:\n${contribution}\n` : ''}
+   Contributions are welcome. ${
+     contribution ? `Guidelines for contributing:\n${contribution}\n` : ""
+   }
    Please submit a pull request at https://github.com/${github}
  
+   
    ## Tests
    Run the following command to run tests:
    \`\`\`
@@ -106,7 +110,6 @@ const generateMarkdown = ({title, description, installation, usage, contribution
  
    Email address: ${email}
  `;
-}
-
+};
 
 module.exports = generateMarkdown;
