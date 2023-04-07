@@ -38,6 +38,11 @@ inquirer
             message: "Provide instructions and examples for use",
             name: "usage",
         },
+        { 
+            type: "input",
+            message: "Include any guidelines for how other developers can contribute to your project",
+            name: "contribution",
+        },
         {
             type: "list",
             name: "license",
@@ -57,6 +62,11 @@ inquirer
         name: "github",
         message: "What is your github username?",
         },
+        { 
+            type: "input",
+            name: "testCommand",
+            message: "What is your github username?",
+            },
         {
             type: "input",
             name: "email",
@@ -85,6 +95,7 @@ console.log(answers)
 
 // TODO: Create a function to initialize app
 function init() {
+
 
 }
 

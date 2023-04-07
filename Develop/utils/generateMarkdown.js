@@ -61,7 +61,7 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = ({title, description, installation, usage, license, github, email} ) => {
+const generateMarkdown = ({title, description, installation, usage, contribution, license, testCommand, github, email} ) => {
   const licenseSection = renderLicenseSection(license);
   const licenseBadge = renderLicenseBadge(license)
   //const licenseLink = renderLicenseLink(license)
@@ -74,7 +74,7 @@ const generateMarkdown = ({title, description, installation, usage, license, git
    ## Table of Contents 
    - [Installation](#installation)
    - [usage](#usage)
-   - ${renderLicenseSection(license)}
+   - [License](#license)
    - [Contributing](#contributing)
    - [Tests](#Tests)
    - [Questions](#questions)
@@ -89,19 +89,20 @@ const generateMarkdown = ({title, description, installation, usage, license, git
    ${license ? `## License\n${licenseSection}\n` : ''}
  
    ## Contributing
-   Contributions are welcome. Please submit a pull request.
-   ${github}
+   Contributions are welcome. ${contribution ? `Guidelines for contributing:\n${contribution}\n` : ''}
+   Please submit a pull request at https://github.com/${github}
  
    ## Tests
+   Run the following command to run tests:
+   \`\`\`
+   ${testCommand}
+   \`\`\`
    
-   \`\`\`
-   npm test
-   \`\`\`
  
    ## Questions
    If you have any questions, please contact me using the following information:
  
-   GitHub username: ${github}
+   GitHub username: https://github.com/${github}
  
    Email address: ${email}
  `;
