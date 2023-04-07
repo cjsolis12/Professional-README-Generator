@@ -22,11 +22,12 @@
    ## Usage
    - Install correct packages, run command, and answer questions.
   
-   ```md
-   ![screenshot](/Develop/assets/readmeScreenshot.png)
-   ```
+  
+   ![screenshot](./assets/readmeScreenshot.png)
+  
+
  
-   https://drive.google.com/file/d/1DP_u7g0o8OY7vyPObeRjZPtbwGhcla64/view?usp=sharing
+   - https://drive.google.com/file/d/1DP_u7g0o8OY7vyPObeRjZPtbwGhcla64/view?usp=sharing
    
    ## License
 This project is covered under the MIT License license.
