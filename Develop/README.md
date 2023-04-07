@@ -23,10 +23,10 @@
    - Install correct packages, run command, and answer questions.
   
    ```md
-   ![screenshot](/assets/readmeScreenshot.png)
+   ![screenshot](/Develop/assets/readmeScreenshot.png)
    ```
  
-   https://watch.screencastify.com/v/L7mm4LB3ai7IOygMXyEg
+   https://drive.google.com/file/d/1DP_u7g0o8OY7vyPObeRjZPtbwGhcla64/view?usp=sharing
    
    ## License
 This project is covered under the MIT License license.
